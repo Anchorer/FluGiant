@@ -24,6 +24,41 @@ class MyApp extends StatelessWidget {
       ),
       // 应用首页路由
       home: MyHomePage(title: 'Flutter Demo Home Page'),
+      // 命名路由表
+      routes: {
+        'new_route': (context) => new NewRoute()
+      }
+    );
+  }
+}
+
+class NewRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        appBar: AppBar(
+            title: Text('New Route')
+        ),
+        body: Center(
+          child: Text('This is a new route'),
+        )
+    );
+  }
+}
+
+class TipPage extends StatelessWidget {
+  TipPage(this.tip);
+  final String tip;
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: AppBar(
+        title: Text("Tip"),
+      ),
+      body: Center(
+        child: Text('Tip: $tip'),
+      ),
     );
   }
 }
@@ -101,6 +136,22 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            FlatButton(
+              child: Text("Open new route"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, 'new_route');
+              },
+            ),
+            FlatButton(
+              child: Text('Show Tips'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.push(context, new MaterialPageRoute(builder: (context) {
+                  return new TipPage('This is different!');
+                }));
+              },
+            )
           ],
         ),
       ),
