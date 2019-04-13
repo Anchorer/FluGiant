@@ -1,3 +1,4 @@
+import 'package:flu_giant/RandomWordsWidget.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -28,37 +29,6 @@ class MyApp extends StatelessWidget {
       routes: {
         'new_route': (context) => new NewRoute()
       }
-    );
-  }
-}
-
-class NewRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: AppBar(
-            title: Text('New Route')
-        ),
-        body: Center(
-          child: Text('This is a new route'),
-        )
-    );
-  }
-}
-
-class TipPage extends StatelessWidget {
-  TipPage(this.tip);
-  final String tip;
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: AppBar(
-        title: Text("Tip"),
-      ),
-      body: Center(
-        child: Text('Tip: $tip'),
-      ),
     );
   }
 }
@@ -151,7 +121,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   return new TipPage('This is different!');
                 }));
               },
-            )
+            ),
+            RandomWordsWidget()
           ],
         ),
       ),
@@ -160,6 +131,37 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
+    );
+  }
+}
+
+class NewRoute extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+        appBar: AppBar(
+            title: Text('New Route')
+        ),
+        body: Center(
+          child: Text('This is a new route'),
+        )
+    );
+  }
+}
+
+class TipPage extends StatelessWidget {
+  TipPage(this.tip);
+  final String tip;
+
+  @override
+  Widget build(BuildContext context) {
+    return new Scaffold(
+      appBar: AppBar(
+        title: Text("Tip"),
+      ),
+      body: Center(
+        child: Text('Tip: $tip'),
+      ),
     );
   }
 }
