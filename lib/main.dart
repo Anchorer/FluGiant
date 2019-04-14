@@ -1,4 +1,7 @@
+import 'package:flu_giant/CounterWidget.dart';
+import 'package:flu_giant/NewRoutePage.dart';
 import 'package:flu_giant/RandomWordsWidget.dart';
+import 'package:flu_giant/TipPage.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       // 命名路由表
       routes: {
-        'new_route': (context) => new NewRoute()
+        'new_route': (context) => new NewRoutePage()
       }
     );
   }
@@ -122,7 +125,16 @@ class _MyHomePageState extends State<MyHomePage> {
                 }));
               },
             ),
-            RandomWordsWidget()
+            RandomWordsWidget(),
+            FlatButton(
+              child: Text('Go to Counter page'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.push(context, new MaterialPageRoute(builder: (context) {
+                  return new CounterWidget();
+                }));
+              },
+            )
           ],
         ),
       ),
@@ -131,37 +143,6 @@ class _MyHomePageState extends State<MyHomePage> {
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
-  }
-}
-
-class NewRoute extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-        appBar: AppBar(
-            title: Text('New Route')
-        ),
-        body: Center(
-          child: Text('This is a new route'),
-        )
-    );
-  }
-}
-
-class TipPage extends StatelessWidget {
-  TipPage(this.tip);
-  final String tip;
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: AppBar(
-        title: Text("Tip"),
-      ),
-      body: Center(
-        child: Text('Tip: $tip'),
-      ),
     );
   }
 }
