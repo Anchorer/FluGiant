@@ -29,10 +29,15 @@ class _CounterWidgetState extends State<CounterWidget> {
   @override
   Widget build(BuildContext context) {
     print('build');
-    return Center(
-      child: FlatButton(
-        child: Text('$_counter'),
-        onPressed: () => setState(() => ++_counter),
+    return new Scaffold(
+      appBar: AppBar(
+        title: Text('Counter Widget'),
+      ),
+      body: Center(
+        child: FlatButton(
+          child: Text('$_counter'),
+          onPressed: () => setState(() => ++_counter),
+        ),
       ),
     );
   }

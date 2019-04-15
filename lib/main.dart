@@ -2,6 +2,7 @@ import 'package:flu_giant/CounterWidget.dart';
 import 'package:flu_giant/NewRoutePage.dart';
 import 'package:flu_giant/RandomWordsWidget.dart';
 import 'package:flu_giant/TipPage.dart';
+import 'package:flu_giant/box/BoxPage.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -30,7 +31,8 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       // 命名路由表
       routes: {
-        'new_route': (context) => new NewRoutePage()
+        'new_route': (context) => new NewRoutePage(),
+        'box_page': (context) => new BoxPage()
       }
     );
   }
@@ -102,6 +104,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            // 1. Click times
             Text(
               'You have clicked the button this many times::::',
             ),
@@ -109,14 +112,18 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
-            FlatButton(
+
+            // 2. Open new page(static route)
+            /*FlatButton(
               child: Text("Open new route"),
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, 'new_route');
               },
-            ),
-            FlatButton(
+            ),*/
+
+            // 3. Open new page with parameter
+            /*FlatButton(
               child: Text('Show Tips'),
               textColor: Colors.blue,
               onPressed: () {
@@ -124,15 +131,28 @@ class _MyHomePageState extends State<MyHomePage> {
                   return new TipPage('This is different!');
                 }));
               },
-            ),
-            RandomWordsWidget(),
-            FlatButton(
+            ),*/
+
+            // 4. Random Words Page
+            /*RandomWordsWidget(),*/
+
+            // 5. Counter Page
+            /*FlatButton(
               child: Text('Go to Counter page'),
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.push(context, new MaterialPageRoute(builder: (context) {
                   return new CounterWidget();
                 }));
+              },
+            ),*/
+
+            // 6. Box Page
+            FlatButton(
+              child: Text('Go to Box page'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, 'box_page');
               },
             )
           ],
