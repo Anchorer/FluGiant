@@ -3,6 +3,9 @@ import 'package:flu_giant/NewRoutePage.dart';
 import 'package:flu_giant/RandomWordsWidget.dart';
 import 'package:flu_giant/TipPage.dart';
 import 'package:flu_giant/box/BoxPage.dart';
+import 'package:flu_giant/const/Consts.dart';
+import 'package:flu_giant/widgets/BasicPage.dart';
+import 'package:flu_giant/widgets/SwitchAndCheckBoxPage.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -31,8 +34,10 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       // 命名路由表
       routes: {
-        'new_route': (context) => new NewRoutePage(),
-        'box_page': (context) => new BoxPage()
+        Consts.PAGE_NEW_ROUTE: (context) => new NewRoutePage(),
+        Consts.PAGE_BOX_PAGE: (context) => new BoxPage(),
+        Consts.PAGE_WIDGET_PAGE: (context) => new BasicPage(),
+        Consts.PAGE_SWITCH_PAGE: (context) => new SwitchAndCheckBoxPage()
       }
     );
   }
@@ -118,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Open new route"),
               textColor: Colors.blue,
               onPressed: () {
-                Navigator.pushNamed(context, 'new_route');
+                Navigator.pushNamed(context, Consts.PAGE_NEW_ROUTE);
               },
             ),*/
 
@@ -148,11 +153,29 @@ class _MyHomePageState extends State<MyHomePage> {
             ),*/
 
             // 6. Box Page
-            FlatButton(
+            /*FlatButton(
               child: Text('Go to Box page'),
               textColor: Colors.blue,
               onPressed: () {
-                Navigator.pushNamed(context, 'box_page');
+                Navigator.pushNamed(context, Consts.PAGE_BOX_PAGE);
+              },
+            ),*/
+
+            // 7. Widget Page
+            FlatButton(
+              child: Text("Go to Basic Widget page"),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, Consts.PAGE_WIDGET_PAGE);
+              },
+            ),
+
+            // 8. Switch Page
+            FlatButton(
+              child: Text('Go to Switch page'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, Consts.PAGE_SWITCH_PAGE);
               },
             )
           ],
