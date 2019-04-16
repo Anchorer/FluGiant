@@ -6,6 +6,7 @@ import 'package:flu_giant/box/BoxPage.dart';
 import 'package:flu_giant/const/Consts.dart';
 import 'package:flu_giant/widgets/BasicPage.dart';
 import 'package:flu_giant/widgets/SwitchAndCheckBoxPage.dart';
+import 'package:flu_giant/widgets/TextFieldPage.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -37,7 +38,8 @@ class MyApp extends StatelessWidget {
         Consts.PAGE_NEW_ROUTE: (context) => new NewRoutePage(),
         Consts.PAGE_BOX_PAGE: (context) => new BoxPage(),
         Consts.PAGE_WIDGET_PAGE: (context) => new BasicPage(),
-        Consts.PAGE_SWITCH_PAGE: (context) => new SwitchAndCheckBoxPage()
+        Consts.PAGE_SWITCH_PAGE: (context) => new SwitchAndCheckBoxPage(),
+        Consts.PAGE_LOGIN_PAGE: (context) => new TextFieldPage()
       }
     );
   }
@@ -176,6 +178,14 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, Consts.PAGE_SWITCH_PAGE);
+              },
+            ),
+
+            // 9. Login Page
+            RaisedButton(
+              child: Text('Login'),
+              onPressed: () {
+                Navigator.pushNamed(context, Consts.PAGE_LOGIN_PAGE);
               },
             )
           ],
