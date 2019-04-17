@@ -1,5 +1,4 @@
 
-import 'package:flu_giant/widgets/SwitchAndCheckBoxPage.dart';
 import 'package:flutter/material.dart';
 
 class BasicPage extends StatelessWidget {
@@ -101,6 +100,43 @@ class BasicPage extends StatelessWidget {
                 Icon(Icons.dashboard, color: Colors.green)
               ],
             ),
+
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(' Hello world '),
+                    Text(' I am Anchorer ')
+                  ]
+                ),
+                Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text(' Hello world '),
+                    Text(' I am Anchorer ')
+                  ]
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  textDirection: TextDirection.rtl,
+                  children: <Widget>[
+                    Text(' Hello world '),
+                    Text(' I am Anchorer ')
+                  ]
+                ),
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  verticalDirection: VerticalDirection.up,
+                  children: <Widget>[
+                    Text(' Hello world ', style: TextStyle(fontSize: 30.0)),
+                    Text(' I am Anchorer ')
+                  ]
+                )
+              ],
+            )
           ],
         ),
       )
