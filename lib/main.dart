@@ -4,11 +4,11 @@ import 'package:flu_giant/RandomWordsWidget.dart';
 import 'package:flu_giant/TipPage.dart';
 import 'package:flu_giant/box/BoxPage.dart';
 import 'package:flu_giant/const/Consts.dart';
-import 'package:flu_giant/widgets/BasicPage.dart';
-import 'package:flu_giant/widgets/StackPage.dart';
-import 'package:flu_giant/widgets/SwitchAndCheckBoxPage.dart';
-import 'package:flu_giant/widgets/TextFieldPage.dart';
-import 'package:flu_giant/widgets/WrapFlowPage.dart';
+import 'package:flu_giant/widgets/multi/BasicPage.dart';
+import 'package:flu_giant/widgets/multi/StackPage.dart';
+import 'package:flu_giant/widgets/multi/SwitchAndCheckBoxPage.dart';
+import 'package:flu_giant/widgets/multi/TextFieldPage.dart';
+import 'package:flu_giant/widgets/multi/WrapFlowPage.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
