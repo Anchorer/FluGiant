@@ -35,10 +35,10 @@ class WrapFlowPage extends StatelessWidget {
                   avatar: CircleAvatar(backgroundColor: Colors.blue, child: Text('W')),
                   label: Text('Winliiy')
               )
-            ],
+            ]
           )
-        ],
-      ),
+        ]
+      )
     );
   }
 

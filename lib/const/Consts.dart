@@ -6,4 +6,5 @@ class Consts {
   static const PAGE_SWITCH_PAGE = "switch_page";
   static const PAGE_LOGIN_PAGE = "login_page";
   static const PAGE_WRAP_FLOW_PAGE = "wrap_flow_page";
+  static const PAGE_STACK_PAGE = "stack_page";
 }

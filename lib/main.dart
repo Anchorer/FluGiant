@@ -5,6 +5,7 @@ import 'package:flu_giant/TipPage.dart';
 import 'package:flu_giant/box/BoxPage.dart';
 import 'package:flu_giant/const/Consts.dart';
 import 'package:flu_giant/widgets/BasicPage.dart';
+import 'package:flu_giant/widgets/StackPage.dart';
 import 'package:flu_giant/widgets/SwitchAndCheckBoxPage.dart';
 import 'package:flu_giant/widgets/TextFieldPage.dart';
 import 'package:flu_giant/widgets/WrapFlowPage.dart';
@@ -41,7 +42,8 @@ class MyApp extends StatelessWidget {
         Consts.PAGE_WIDGET_PAGE: (context) => new BasicPage(),
         Consts.PAGE_SWITCH_PAGE: (context) => new SwitchAndCheckBoxPage(),
         Consts.PAGE_LOGIN_PAGE: (context) => new TextFieldPage(),
-        Consts.PAGE_WRAP_FLOW_PAGE: (context) => new WrapFlowPage()
+        Consts.PAGE_WRAP_FLOW_PAGE: (context) => new WrapFlowPage(),
+        Consts.PAGE_STACK_PAGE: (context) => new StackPage()
       }
     );
   }
@@ -198,6 +200,15 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, Consts.PAGE_WRAP_FLOW_PAGE);
               },
+            ),
+
+            // 11. Stack Page
+            FlatButton(
+              child: Text('Go to Stack Page'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, Consts.PAGE_STACK_PAGE);
+              }
             )
           ],
         ),
