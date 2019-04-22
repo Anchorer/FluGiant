@@ -84,7 +84,7 @@ class BasicPage extends StatelessWidget {
               onPressed: () {},
             ),
 
-            Image(
+            /*Image(
               image: AssetImage('images/avatar.png'),
               width: 100,
             ),
@@ -99,9 +99,9 @@ class BasicPage extends StatelessWidget {
                 Icon(Icons.audiotrack, color: Colors.green),
                 Icon(Icons.dashboard, color: Colors.green)
               ],
-            ),
+            ),*/
 
-            Column(
+            /*Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Row(
@@ -136,6 +136,52 @@ class BasicPage extends StatelessWidget {
                   ]
                 )
               ],
+            )*/
+
+            Flex(
+              direction: Axis.horizontal,
+              children: <Widget>[
+                Expanded(
+                  flex: 1,
+                  child: Container(
+                    height: 30,
+                    color: Colors.red,
+                  ),
+                ),
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    height: 30,
+                    color: Colors.green,
+                  ),
+                )
+              ]
+            ),
+
+            SizedBox(
+              height: 100,
+              child: Flex(
+                direction: Axis.vertical,
+                children: <Widget>[
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      height: 30,
+                      color: Colors.red,
+                    ),
+                  ),
+                  Spacer(
+                    flex: 1,
+                  ),
+                  Expanded(
+                    flex: 1,
+                    child: Container(
+                      height: 30,
+                      color: Colors.green,
+                    ),
+                  )
+                ]
+              )
             )
           ],
         ),
