@@ -7,6 +7,7 @@ import 'package:flu_giant/const/Consts.dart';
 import 'package:flu_giant/widgets/BasicPage.dart';
 import 'package:flu_giant/widgets/SwitchAndCheckBoxPage.dart';
 import 'package:flu_giant/widgets/TextFieldPage.dart';
+import 'package:flu_giant/widgets/WrapFlowPage.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
         Consts.PAGE_BOX_PAGE: (context) => new BoxPage(),
         Consts.PAGE_WIDGET_PAGE: (context) => new BasicPage(),
         Consts.PAGE_SWITCH_PAGE: (context) => new SwitchAndCheckBoxPage(),
-        Consts.PAGE_LOGIN_PAGE: (context) => new TextFieldPage()
+        Consts.PAGE_LOGIN_PAGE: (context) => new TextFieldPage(),
+        Consts.PAGE_WRAP_FLOW_PAGE: (context) => new WrapFlowPage()
       }
     );
   }
@@ -186,6 +188,15 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Login'),
               onPressed: () {
                 Navigator.pushNamed(context, Consts.PAGE_LOGIN_PAGE);
+              },
+            ),
+
+            // 10. Wrap&Flow Page
+            FlatButton(
+              child: Text('Go to Wrap&Flow Page'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, Consts.PAGE_WRAP_FLOW_PAGE);
               },
             )
           ],
