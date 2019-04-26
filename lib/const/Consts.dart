@@ -7,4 +7,8 @@ class Consts {
   static const PAGE_LOGIN_PAGE = "login_page";
   static const PAGE_WRAP_FLOW_PAGE = "wrap_flow_page";
   static const PAGE_STACK_PAGE = "stack_page";
+
+  // Method channels
+  static const METHOD_CHANNEL_TEST = "channel_test";
+  static const METHOD_CALL_TEST = "testMethod";
 }

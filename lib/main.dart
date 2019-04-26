@@ -10,6 +10,7 @@ import 'package:flu_giant/widgets/multi/SwitchAndCheckBoxPage.dart';
 import 'package:flu_giant/widgets/multi/TextFieldPage.dart';
 import 'package:flu_giant/widgets/multi/WrapFlowPage.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() => runApp(MyApp());
 
@@ -69,6 +70,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  static const _platform = const MethodChannel(Consts.METHOD_CHANNEL_TEST);
 
   void _incrementCounter() {
     setState(() {
@@ -209,6 +211,15 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 Navigator.pushNamed(context, Consts.PAGE_STACK_PAGE);
               }
+            ),
+
+            // 12. Trigger channel method from kt
+            FlatButton(
+              child: Text('Trigger channel method from kt'),
+              textColor: Colors.amber,
+              onPressed: () {
+                _platform.invokeMethod(Consts.METHOD_CALL_TEST);
+              },
             )
           ],
         ),
