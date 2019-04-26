@@ -1,7 +1,7 @@
 
-import 'package:flu_giant/box/TapboxA.dart';
-import 'package:flu_giant/box/TapboxB.dart';
-import 'package:flu_giant/box/TapboxC.dart';
+import 'package:flu_giant/widgets/box/TapboxA.dart';
+import 'package:flu_giant/widgets/box/TapboxB.dart';
+import 'package:flu_giant/widgets/box/TapboxC.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

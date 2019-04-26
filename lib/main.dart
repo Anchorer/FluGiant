@@ -2,8 +2,9 @@ import 'package:flu_giant/CounterWidget.dart';
 import 'package:flu_giant/NewRoutePage.dart';
 import 'package:flu_giant/RandomWordsWidget.dart';
 import 'package:flu_giant/TipPage.dart';
-import 'package:flu_giant/box/BoxPage.dart';
+import 'package:flu_giant/widgets/box/BoxPage.dart';
 import 'package:flu_giant/const/Consts.dart';
+import 'package:flu_giant/widgets/container/ConstrainedPage.dart';
 import 'package:flu_giant/widgets/multi/BasicPage.dart';
 import 'package:flu_giant/widgets/multi/StackPage.dart';
 import 'package:flu_giant/widgets/multi/SwitchAndCheckBoxPage.dart';
@@ -44,7 +45,8 @@ class MyApp extends StatelessWidget {
         Consts.PAGE_SWITCH_PAGE: (context) => new SwitchAndCheckBoxPage(),
         Consts.PAGE_LOGIN_PAGE: (context) => new TextFieldPage(),
         Consts.PAGE_WRAP_FLOW_PAGE: (context) => new WrapFlowPage(),
-        Consts.PAGE_STACK_PAGE: (context) => new StackPage()
+        Consts.PAGE_STACK_PAGE: (context) => new StackPage(),
+        Consts.PAGE_CONSTRAINED_PAGE: (context) => new ConstrainedPage()
       }
     );
   }
@@ -220,6 +222,15 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () {
                 _platform.invokeMethod(Consts.METHOD_CALL_TEST);
               },
+            ),
+
+            // 13. Constrained Page
+            FlatButton(
+              child: Text('Go to constrained page'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, Consts.PAGE_CONSTRAINED_PAGE);
+              }
             )
           ],
         ),
