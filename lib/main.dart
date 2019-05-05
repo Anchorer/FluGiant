@@ -5,6 +5,7 @@ import 'package:flu_giant/TipPage.dart';
 import 'package:flu_giant/widgets/box/BoxPage.dart';
 import 'package:flu_giant/const/Consts.dart';
 import 'package:flu_giant/widgets/container/ConstrainedPage.dart';
+import 'package:flu_giant/widgets/container/ScaffoldPage.dart';
 import 'package:flu_giant/widgets/multi/BasicPage.dart';
 import 'package:flu_giant/widgets/multi/StackPage.dart';
 import 'package:flu_giant/widgets/multi/SwitchAndCheckBoxPage.dart';
@@ -33,20 +34,21 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.orange,
+        primarySwatch: Colors.blue,
       ),
       // 应用首页路由
       home: MyHomePage(title: 'Flutter Demo Home Page'),
       // 命名路由表
       routes: {
         Consts.PAGE_NEW_ROUTE: (context) => new NewRoutePage(),
-        Consts.PAGE_BOX_PAGE: (context) => new BoxPage(),
-        Consts.PAGE_WIDGET_PAGE: (context) => new BasicPage(),
-        Consts.PAGE_SWITCH_PAGE: (context) => new SwitchAndCheckBoxPage(),
-        Consts.PAGE_LOGIN_PAGE: (context) => new TextFieldPage(),
-        Consts.PAGE_WRAP_FLOW_PAGE: (context) => new WrapFlowPage(),
-        Consts.PAGE_STACK_PAGE: (context) => new StackPage(),
-        Consts.PAGE_CONSTRAINED_PAGE: (context) => new ConstrainedPage()
+        Consts.PAGE_BOX: (context) => new BoxPage(),
+        Consts.PAGE_WIDGET: (context) => new BasicPage(),
+        Consts.PAGE_SWITCH: (context) => new SwitchAndCheckBoxPage(),
+        Consts.PAGE_LOGIN: (context) => new TextFieldPage(),
+        Consts.PAGE_WRAP_FLOW: (context) => new WrapFlowPage(),
+        Consts.PAGE_STACK: (context) => new StackPage(),
+        Consts.PAGE_CONSTRAINED: (context) => new ConstrainedPage(),
+        Consts.PAGE_SCAFFOLD: (context) => new ScaffoldPage()
       }
     );
   }
@@ -176,7 +178,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text("Go to Basic Widget page"),
               textColor: Colors.blue,
               onPressed: () {
-                Navigator.pushNamed(context, Consts.PAGE_WIDGET_PAGE);
+                Navigator.pushNamed(context, Consts.PAGE_WIDGET);
               },
             ),
 
@@ -185,7 +187,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Go to Switch page'),
               textColor: Colors.blue,
               onPressed: () {
-                Navigator.pushNamed(context, Consts.PAGE_SWITCH_PAGE);
+                Navigator.pushNamed(context, Consts.PAGE_SWITCH);
               },
             ),
 
@@ -193,7 +195,7 @@ class _MyHomePageState extends State<MyHomePage> {
             RaisedButton(
               child: Text('Login'),
               onPressed: () {
-                Navigator.pushNamed(context, Consts.PAGE_LOGIN_PAGE);
+                Navigator.pushNamed(context, Consts.PAGE_LOGIN);
               },
             ),
 
@@ -202,7 +204,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Go to Wrap&Flow Page'),
               textColor: Colors.blue,
               onPressed: () {
-                Navigator.pushNamed(context, Consts.PAGE_WRAP_FLOW_PAGE);
+                Navigator.pushNamed(context, Consts.PAGE_WRAP_FLOW);
               },
             ),
 
@@ -211,7 +213,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Go to Stack Page'),
               textColor: Colors.blue,
               onPressed: () {
-                Navigator.pushNamed(context, Consts.PAGE_STACK_PAGE);
+                Navigator.pushNamed(context, Consts.PAGE_STACK);
               }
             ),
 
@@ -229,8 +231,17 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('Go to constrained page'),
               textColor: Colors.blue,
               onPressed: () {
-                Navigator.pushNamed(context, Consts.PAGE_CONSTRAINED_PAGE);
+                Navigator.pushNamed(context, Consts.PAGE_CONSTRAINED);
               }
+            ),
+
+            // 14. Scaffold Page
+            FlatButton(
+              child: Text('Go to sacffold page'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, Consts.PAGE_SCAFFOLD);
+              },
             )
           ],
         ),
