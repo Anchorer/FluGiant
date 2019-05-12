@@ -9,6 +9,8 @@ class Consts {
   static const PAGE_STACK = "stack_page";
   static const PAGE_CONSTRAINED = "constrained_page";
   static const PAGE_SCAFFOLD = "scaffold_page";
+  static const PAGE_SCROLL_MAIN = "scroll_main_page";
+  static const PAGE_SINGLE_CHILD_SCROLL = "single_child_scroll_page";
 
   // Method channels
   static const METHOD_CHANNEL_TEST = "channel_test";

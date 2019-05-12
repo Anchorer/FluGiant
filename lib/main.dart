@@ -11,6 +11,7 @@ import 'package:flu_giant/widgets/multi/StackPage.dart';
 import 'package:flu_giant/widgets/multi/SwitchAndCheckBoxPage.dart';
 import 'package:flu_giant/widgets/multi/TextFieldPage.dart';
 import 'package:flu_giant/widgets/multi/WrapFlowPage.dart';
+import 'package:flu_giant/widgets/scroll/ScrollMainPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -48,7 +49,9 @@ class MyApp extends StatelessWidget {
         Consts.PAGE_WRAP_FLOW: (context) => new WrapFlowPage(),
         Consts.PAGE_STACK: (context) => new StackPage(),
         Consts.PAGE_CONSTRAINED: (context) => new ConstrainedPage(),
-        Consts.PAGE_SCAFFOLD: (context) => new ScaffoldPage()
+        Consts.PAGE_SCAFFOLD: (context) => new ScaffoldPage(),
+        Consts.PAGE_SCROLL_MAIN: (context) => new ScrollMainPage(),
+        Consts.PAGE_SINGLE_CHILD_SCROLL: (context) => new SingleChildScrollView()
       }
     );
   }
@@ -241,6 +244,15 @@ class _MyHomePageState extends State<MyHomePage> {
               textColor: Colors.blue,
               onPressed: () {
                 Navigator.pushNamed(context, Consts.PAGE_SCAFFOLD);
+              },
+            ),
+
+            // 15. Scroll Main Page
+            FlatButton(
+              child: Text('Go to scroll main page'),
+              textColor: Colors.blue,
+              onPressed: () {
+                Navigator.pushNamed(context, Consts.PAGE_SCROLL_MAIN);
               },
             )
           ],
